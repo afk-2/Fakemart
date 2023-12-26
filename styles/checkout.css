@@ -1,0 +1,144 @@
+.checkout-title {
+  margin-bottom: 40px;
+}
+.checkout-container {
+  margin-top: 130px;
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.checkout-title {
+
+}
+
+.display-cart-quantity {
+  color: rgb(252, 94, 37);
+}
+
+.product-container {
+  width: 800px;
+  padding: 30px 20px;
+  margin-bottom: 20px;
+
+  border: 1px solid rgb(240, 239, 239);
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgb(212, 212, 212);
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.image-container {
+  width: 150px;
+  height: 180px;
+  margin-right: 20px;
+}
+
+.product-image {
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.product-details {
+  max-width: 500px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+
+  margin-right: 20px;
+}
+
+.product-name {
+  font-weight: 600;
+}
+
+.product-price {
+  font-weight: 500;
+}
+
+.update-quantity {
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+}
+
+.select-quantity {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.decrement-quantity-button,
+.increment-quantity-button {
+  width: 30px;
+  height: 30px;
+
+  color: white;
+  font-size: 20px;
+
+  border-radius: 50px;
+}
+
+.delete-icon {
+  font-size: 14px;
+}
+
+.quantity-selector {
+  padding: 5px 10px;
+  background-color: rgb(241, 241, 241);;
+}
+
+.remove-product {
+  background-color: transparent;
+  border: none;
+}
+
+.remove-product:hover {
+  color: rgb(23, 82, 129);
+  text-decoration: underline;
+}
+
+.max-amount-message {
+  color: red;
+  font-size: 15px;
+  opacity: 0;
+}
+
+.max-amount-message-visible {
+  opacity: 1;
+}
+
+.delivery-options {
+  width: 200px;
+}
+
+.delivery-options-title {
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.delivery-option-input {
+  margin-left: 0;
+  margin-right: 8px;
+}
+
+.delivery-option {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  margin-bottom: 12px;
+}
+
+.delivery-option-date {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.delivery-option-price {
+  font-size: 14px;
+  color: rgb(147, 145, 145);
+}
+

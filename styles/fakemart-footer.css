@@ -1,0 +1,91 @@
+/*CONTACT INFO*/
+.contact-info-section {
+  background-color: rgb(241, 240, 240);
+  padding: 15px 20px;
+}
+
+.contact-info-header {
+  width: 750px;
+  color: rgb(252, 94, 37);
+  margin-bottom: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-info-title {
+  margin-top: -1px;
+}
+
+.contact-info {
+  background-color: transparent;
+  padding: 0 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.social-links {
+  width: 170px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.twitter-icon,
+.youtube-icon {
+  font-size: 40px;
+}
+
+.youtube-icon {
+  color: red;
+  font-size: 45px;
+}
+
+.insta-icon {
+  width: 35px;
+}
+
+.twitter-icon {
+  color: rgb(58, 146, 241);
+}
+
+/*FOOTER*/
+.fakemart-footer {
+  width: 100%;
+  background-color: rgb(252, 94, 37);
+}
+
+.footer-container {
+  padding: 20px 50px 50px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.services-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 25px;
+}
+
+.services-links a:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+.services-links a:active {
+  color: rgb(245, 140, 20);
+}
+
+

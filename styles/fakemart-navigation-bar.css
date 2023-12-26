@@ -1,0 +1,41 @@
+.navigation-bar {
+  height: 50px;
+  background-color: rgb(252, 94, 37);
+  padding: 0 10px;
+
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 1000;
+}
+.navigation-link {
+  font-weight: 700;
+}
+.all-categories-container {
+  display: flex;
+  align-items: center;
+}
+.categories-icon {
+  font-size: 20px;
+  margin-right: 4px;
+}
+.change-language {
+  width: 60px;
+
+  display: flex;
+  align-items: center;
+}
+.country-flag {
+  max-width: 70%;
+  margin-right: 4px;
+}
+.caret-down {
+  font-size: 20px;
+  font-weight: 700;
+}

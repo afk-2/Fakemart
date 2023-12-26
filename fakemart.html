@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fakemart</title>
+    <!-- Load a font called Roboto from Google Fonts. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!--Font Awesome 4 Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--CSS Styles-->
+    <link rel="stylesheet" href="styles/fakemart-general.css">
+    <link rel="stylesheet" href="styles/fakemart-header.css">
+    <link rel="stylesheet" href="styles/fakemart-navigation-bar.css">
+    <link rel="stylesheet" href="styles/slideshow.css">
+    <link rel="stylesheet" href="styles/products-categories.css">
+    <link rel="stylesheet" href="styles/products.css">
+    <link rel="stylesheet" href="styles/fakemart-footer.css">
+  </head>
+  <body>
+    <!--Fakemart Header-->
+
+    <header class="fakemart-header js-fakemart-header">
+    </header>
+
+    <!--Navigation Bar-->
+
+    <nav class="navigation-bar">
+      <a class="navigation-link all-categories-container">
+        <i class="fa fa-th-large categories-icon" aria-hidden="true"></i>
+        <div class="navigation-link">All Categories</div>
+      </a>
+      <a class="navigation-link" href="#">Groceries & Essentials</a>
+      <a class="navigation-link" href="#">Electronics</a>
+      <a class="navigation-link" href="#">Home & Living</a>
+      <a class="navigation-link" href="#">Fashion</a>
+      <a class="navigation-link" href="#">Toys</a>
+      <a class="navigation-link" href="#">Beauty</a>
+      <a class="navigation-link" href="#">Top Deals</a>
+      <a class="change-language navigation-link" href="#">
+        <img class="country-flag" src="pics/icons/Flag-Saudi-Arabia.webp">
+        <i class="fa fa-caret-down caret-down" aria-hidden="true"></i>
+      </a>
+    </nav>
+
+    <!--Slideshow-->
+
+    <div class="slideshow-container">
+      <div class="slider-wrapper">
+        <div class="slider">
+          <img id="slide-1" class="slides" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7_Hb_UmY1r0YYU0r31PGgUvwXiS7dFIkCVw&usqp=CAU">
+          
+          <img id="slide-2" class="slides" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsrhzsNOvGh1GwJ1yyJpw_a2OJKiIybfQcthlH4Heg3VuUPADjNTfVqKSt9-f3uI1zg1o&usqp=CAU">
+
+          <img id="slide-3" class="slides" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTREJW47X--D3hxyI_RPBCe0GvNUBpWHkuw8w&usqp=CAU">
+        </div>
+
+        <div class="slider-nav">
+          <a href="#slide-1" class="slider-nav-link"></a>
+          <a href="#slide-2" class="slider-nav-link"></a>
+          <a href="#slide-3" class="slider-nav-link"></a>
+        </div>
+      </div>
+    </div>
+
+    <!--Products Categories-->
+
+    <section class="categories-container">
+      <div class="categories-grid">
+        <div class="categories-row">
+          <a class="product-category" href="#">
+            <img class="product-img" src="pics/categories icons/fruits and vegetables.jpg">
+            <div class="category-name">
+              Fruits & Vegetables
+            </div>
+          </a>
+
+          <a class="product-category" href="#">
+            <img class="product-img" src="pics/categories icons/dairy-products-and-eggs.webp">
+            <div class="category-name">
+              Dairy & Eggs
+            </div>
+          </a>
+
+          <a class="product-category" href="#">
+            <img class="product-img" src="pics/categories icons/meat and poultry.jpg">
+            <div class="category-name">
+              Meat & Poultry
+            </div>
+          </a>
+
+          <a class="product-category" href="#">
+            <img class="product-img" src="pics/categories icons/bakery.jpg">
+            <div class="category-name">
+              Bakery
+            </div>
+          </a>
+
+          <a class="product-category" href="#">
+            <img class="product-img" src="pics/categories icons/beverages.jpg">
+            <div class="category-name">
+              Beverages
+            </div>
+          </a>
+        </div>
+
+        <div class="categories-row">
+          <a class="product-category" href="#">
+            <img class="product-img" src="pics/categories icons/electronics and accesories.jfif">
+            <div class="category-name">
+              Electronics & Accessories
+            </div>
+          </a>
+
+          <a class="product-category" href="#">
+            <img class="product-img" src="pics/categories icons/men-cozy-fleece-zip-up-hoodie-red.jpg">
+            <div class="category-name">
+              Fashion
+            </div>
+          </a>
+
+          <a class="product-category" href="#">
+            <img class="product-img" src="pics/categories icons/dairy-products-and-eggs.webp">
+            <div class="category-name">
+              Dairy & Eggs
+            </div>
+          </a>
+
+          <a class="product-category" href="#">
+            <img class="product-img" src="pics/categories icons/cleaning.avif">
+            <div class="category-name">
+              Cleaning
+            </div>
+          </a>
+
+          <a class="product-category" href="#">
+            <img class="product-img" src="pics/categories icons/deals.jfif">
+            <div class="category-name">
+              Top Deals
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!--PRODUCTS SECTION-->
+    <section class="products-section">
+      
+      <!--TOP DEALS AND PROMOTIONS-->
+      <div class="product-category">
+        <h2 class="category-title">Top Deals & Promotions</h2>
+
+        <button class="prev-button js-prev-button">
+          <i class="fa fa-angle-left prev-icon" aria-hidden="true"></i>
+        </button>
+
+        <button class="next-button js-next-button">
+          <i class="fa fa-angle-right next-icon" aria-hidden="true"></i>
+        </button>
+
+        <div class="products-container js-deals-container"></div>
+      </div>
+
+      <!--GROCERIES AND ESSENTIALS-->
+      <div class="product-category">
+        <h2 class="category-title">Groceries & Essentials</h2>
+
+        <button class="prev-button js-prev-button">
+          <i class="fa fa-angle-left prev-icon" aria-hidden="true"></i>
+        </button>
+
+        <button class="next-button js-next-button">
+          <i class="fa fa-angle-right next-icon" aria-hidden="true"></i>
+        </button>
+
+        <div class="products-container js-groceries-container"></div>
+      </div>
+
+      <!--Electronics-->
+      <div class="product-category">
+        <h2 class="category-title">Electronics</h2>
+
+        <button class="prev-button js-prev-button">
+          <i class="fa fa-angle-left prev-icon" aria-hidden="true"></i>
+        </button>
+
+        <button class="next-button js-next-button">
+          <i class="fa fa-angle-right next-icon" aria-hidden="true"></i>
+        </button>
+
+        <div class="products-container js-electronics-container"></div>
+      </div>
+
+      <!--HOME & LIVING-->
+      <div class="product-category">
+        <h2 class="category-title">Home & Living</h2>
+
+        <button class="prev-button js-prev-button">
+          <i class="fa fa-angle-left prev-icon" aria-hidden="true"></i>
+        </button>
+
+        <button class="next-button js-next-button">
+          <i class="fa fa-angle-right next-icon" aria-hidden="true"></i>
+        </button>
+
+        <div class="products-container js-home-living-container"></div>
+      </div>
+
+    </section>
+
+    <!--Contact Us-->
+    <section class="contact-info-section">
+      <div class="contact-info-header">
+        <a class="link-primary" href="#">
+          <img class="fakemart-logo" src="pics/Fakemart-logo.png">
+        </a>
+        <h2 class="contact-info-title">
+          Get In Touch With Us!
+        </h2>
+      </div>
+
+      <div class="contact-info">
+        <p class="contact">Phone Number: 8001000330</p>
+        <p class="contact">Email: fakemart@gmail.com</p>
+        <div class="social-links">
+          <a href="#">
+            <i class="fa fa-youtube-play youtube-icon" aria-hidden="true"></i>
+          </a>
+          <a href="#">
+            <i class="fa fa-twitter-square twitter-icon" aria-hidden="true"></i>
+          </a>
+          <a href="#">
+            <img class="insta-icon" src="pics/icons/instagram-icon.jfif">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!--FOOTER -->
+    <footer class="fakemart-footer">
+      <div class="footer-container">
+        <div class="customer-service">
+          <h3 class="footer-title">
+            Customer Service
+          </h3>
+          <ul class="services-links">
+            <li>
+              <a href="#">Service and Warranty</a>
+            </li>
+            <li>
+              <a href="#">Shipping and Delivery</a>
+            </li>
+            <li>
+              <a href="#">Returns and Exchanges</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="about-us">
+          <h3 class="footer-title">
+            About Us
+          </h3>
+          <ul class="services-links">
+            <li>
+              <a href="#">About FakeMart</a>
+            </li>
+            <li>
+              <a href="#">Careers</a>
+            </li>
+            <li>
+              <a href="#">Our Locations</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="help-and-support">
+          <h3 class="footer-title">
+            Help & Support
+          </h3>
+          <ul class="services-links">
+            <li>
+              <a href="#">Need Help?</a>
+            </li>
+            <li>
+              <a href="#">FAQ</a>
+            </li>
+            <li>
+              <a href="#">Terms & Conditions</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+      
+    <script type="module" src="scripts/fakemart.js"></script>
+  </body>
+</html>

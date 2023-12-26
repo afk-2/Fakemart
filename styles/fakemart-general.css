@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: roboto, arial;
+  background-color: #ffffff;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+button {
+  cursor: pointer;
+  border: none;
+}
+.button-primary {
+  background-color: rgb(252, 94, 37);
+}
+.button-primary:active {
+  background-color: rgb(251, 78, 15);
+}
+.quantity-selector {
+  background-color: rgb(241, 241, 241);
+  padding: 5px 10px;
+
+  border: 2px solid white;
+  border-radius: 5px;
+}
+.quantity-selector:focus {
+  background-color: rgb(232, 229, 229);
+  border: 2px solid rgb(222, 101, 27);
+}

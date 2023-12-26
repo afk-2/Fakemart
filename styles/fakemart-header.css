@@ -1,0 +1,112 @@
+.fakemart-header {
+  background-color: white;
+  height: 80px;
+  padding: 0 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 1000;
+}
+.header-left-section {
+  width: 250px;
+  margin-top: 8px;
+}
+.fakemart-logo {
+  width: 200px;
+}
+
+.middle-section {
+  width: 600px;
+
+  display: flex;
+  align-items: center;
+}
+.search-bar {
+  flex: 1;
+  height: 40px;
+  padding: 0 15px;
+
+  border: 2px solid rgb(214, 212, 212);
+  border-right: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+
+  font-size: 16px;
+}
+.search-bar:focus {
+  border: 2px solid white;
+  outline: 2px solid rgb(222, 101, 27);
+}
+.search-button {
+  height: 44px;
+  background-color: rgb(252, 94, 37);
+  padding: 0 18px 0 15px;
+
+  border-top-right-radius: 22px;
+  border-bottom-right-radius: 22px;
+}
+.search-icon {
+  width: 20px;
+}
+
+.right-section {
+  width: 350px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.user-sign-in-container {
+  display: flex;
+  align-items: center;
+
+  margin-right: 10px;
+
+  cursor: pointer;
+}
+.user-icon {
+  width: 25px;
+  margin-right: 2px;
+}
+.sign-in {
+  font-weight: 700;
+}
+.select-pickup-or-delivery {
+  display: flex;
+  align-items: center;
+}
+.select-pickup,
+.select-delivery {
+  padding: 6px 8px;
+  font-weight: 700;
+}
+.select-pickup {
+  background-color: rgb(237, 234, 234);
+}
+.select-pickup:active {
+  background-color: rgb(227, 222, 222);
+}
+.cart-icon {
+  width: 65px;
+}
+.cart-quantity {
+  width: 18px;
+  background-color: rgb(252, 94, 37);
+
+  position: absolute;
+  top: 8px;
+  right: 22px;
+
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+
+  border-radius: 9px;
+}
