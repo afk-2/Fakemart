@@ -1,9 +1,10 @@
 import { renderHeader } from '../header.js';
 import { renderCheckoutTitle } from '../checkout.js';
-import {saveToStorage, addToCart, cart, removeFromCart} from '../../data/cart.js';
+import {saveToStorage, addToCart, cart, removeFromCart, updateDeliveryOption} from '../../data/cart.js';
 import {productsDeals, productsGroceries, productsElectronics, productsHome_Living } from '../../data/products.js';
 import { formatCurrency } from '../utils/money.js';
 import { displayMaxAmountMessage } from '../utils/maxAmountMessage.js';
+import { deliveryOptions, calculateDeliveryDate, getDeliveryOption } from '../../data/deliveryOptions.js';
 
 export function renderOrderSummary() {
   // Generating Order Summary HTML
@@ -11,6 +12,13 @@ export function renderOrderSummary() {
 
   cart.forEach((cartItem) => {
     const productId = cartItem.productId;
+
+    const deliveryOptionId = cartItem.deliveryOptionId;
+
+    const deliveryOption = getDeliveryOption(deliveryOptionId);
+
+    const dateString = calculateDeliveryDate(deliveryOption);
+
     let matchingProduct;
 
     productsDeals.forEach((product) => {
@@ -46,7 +54,7 @@ export function renderOrderSummary() {
 
         <div class="product-details">
           <div class="product-name">
-          ${matchingProduct.name}
+            ${matchingProduct.name}
           </div>
 
           <div class="product-price">
@@ -82,54 +90,59 @@ export function renderOrderSummary() {
               <i class="fa fa-trash-o delete-icon" aria-hidden="true"></i>
               Remove product
             </button>
+          </div>
+
+          <div class="max-amount-message js-max-amount-message-${matchingProduct.id}">
+            Maximum amount added
+          </div>
         </div>
 
-        <div class="max-amount-message js-max-amount-message-${matchingProduct.id}">Maximum amount added</div>
+        <div class="delivery-options">
+          <p class="delivery-options-title">
+            Choose a delivery option
+          </p>
+
+          ${deliveryOptionsHTML(matchingProduct,cartItem)} 
+        </div> 
       </div>
-
-
-      <div class="delivery-options">
-        <p class="delivery-options-title">
-          Choose a delivery option
-        </p>
-
-        <div class="delivery-option">
-          <input type="radio" class="delivery-option-input" name="delivery-option">
-          <div>
-            <div class="delivery-option-date">
-              Tuesday, June 21
-            </div>
-            <div class="delivery-option-price">
-              FREE Shipping
-            </div>
-          </div>
-        </div>
-        <div class="delivery-option">
-          <input type="radio" class="delivery-option-input" name="delivery-option">
-          <div>
-            <div class="delivery-option-date">
-              Wednesday, June 15
-            </div>
-            <div class="delivery-option-price">
-              SAR 4.99 - Shipping
-            </div>
-          </div>
-        </div>
-        <div class="delivery-option">
-          <input type="radio" class="delivery-option-input" name="delivery-option">
-          <div>
-            <div class="delivery-option-date">
-              Monday, June 13
-            </div>
-            <div class="delivery-option-price">
-              SAR 9.99 - Shipping
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     `;
   });
+
+  // Generate Delivery Options HTML
+  function deliveryOptionsHTML(matchingProduct,cartItem) {
+    let html = '';
+
+    deliveryOptions.forEach((deliveryOption) => {
+      const dateString = calculateDeliveryDate(deliveryOption);
+
+      const priceString = deliveryOption.priceCents === 0 
+        ? 'FREE'
+        : `SAR ${formatCurrency(deliveryOption.priceCents)} -`;
+
+      const isChecked = deliveryOption.id === cartItem.deliveryOptionId;
+
+      html += `
+        <div class="delivery-option 
+        js-delivery-option"
+        data-product-id="${matchingProduct.id}"
+        data-delivery-option-id="${deliveryOption.id}">
+          <input type="radio" 
+            ${isChecked ? 'checked' : ''}
+            class="delivery-option-input" name="delivery-option-${matchingProduct.id}">
+          <div>
+            <div class="delivery-option-date">
+              ${dateString}
+            </div>
+            <div class="delivery-option-price">
+              ${priceString} Shipping
+            </div>
+          </div>
+        </div>
+      `;
+    });
+
+    return html;
+  }
 
   document.querySelector('.js-checkout-products-container')
       .innerHTML = cartSummaryHTML;
@@ -219,6 +232,17 @@ export function renderOrderSummary() {
     });
   }
   updateSelectorValue();
+
+  // Update Delivery Option
+  document.querySelectorAll('.js-delivery-option')
+    .forEach((element) => {
+      const {productId, deliveryOptionId} = element.dataset;
+
+      element.addEventListener('click', () => {
+        updateDeliveryOption(productId, deliveryOptionId);
+        renderOrderSummary();
+      });
+    });
 }
 
 document.querySelectorAll('.decrement-quantity-button')
